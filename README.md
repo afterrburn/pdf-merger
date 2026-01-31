@@ -10,7 +10,7 @@ A simple command-line tool to merge two PDF files into one.
 ## Installation
 
 ```bash
-git clone https://github.com/srith/pdf-merger.git
+git clone https://github.com/afterrburn/pdf-merger.git
 cd pdf-merger
 uv sync
 ```
