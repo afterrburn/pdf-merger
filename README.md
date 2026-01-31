@@ -1,43 +1,36 @@
 # PDF Merger
 
-A simple command-line tool to merge two PDF files into one.
+Merge two PDF files into one.
 
-## Requirements
+## Setup (One Time)
 
-- Python 3.10+
-- [uv](https://docs.astral.sh/uv/) (recommended) or pip
-
-## Installation
+Open Terminal and run:
 
 ```bash
+# Install uv (Python package manager)
+brew install uv
+
+# Download this tool
 git clone https://github.com/afterrburn/pdf-merger.git
 cd pdf-merger
+
+# Install dependencies
 uv sync
 ```
 
-## Usage
+## How to Merge PDFs
 
 ```bash
-uv run python pdf_merger.py <first.pdf> <second.pdf> -o <output.pdf>
+cd pdf-merger
+uv run python pdf_merger.py first.pdf second.pdf -o combined.pdf
 ```
+
+Replace `first.pdf` and `second.pdf` with your actual file paths.
 
 ### Example
 
 ```bash
-uv run python pdf_merger.py document1.pdf document2.pdf -o combined.pdf
+uv run python pdf_merger.py ~/Downloads/doc1.pdf ~/Downloads/doc2.pdf -o ~/Desktop/merged.pdf
 ```
 
-The first PDF's pages will appear first, followed by the second PDF's pages.
-
-### Options
-
-| Option | Description | Default |
-|--------|-------------|---------|
-| `-o`, `--output` | Output file path | `merged.pdf` |
-
-## Running Tests
-
-```bash
-uv sync --extra dev
-uv run pytest -v
-```
+This creates `merged.pdf` on your Desktop with all pages from `doc1.pdf` followed by all pages from `doc2.pdf`.
